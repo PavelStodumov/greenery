@@ -1,0 +1,26 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    height: 80px;
+    background-color: blue;
+}
+
+.content {
+    background-color: cadetblue;
+    align-self: stretch;
+    flex-grow: 1;
+}
+
+.footer {
+    height: 80px;
+    background-color: aqua;
+}

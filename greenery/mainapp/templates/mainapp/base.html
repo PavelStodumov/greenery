@@ -3,18 +3,31 @@
 <html>
  <head>
   <meta charset="utf-8" />
-  <title>{{ title }}</title>    
-  <link type="text/css" href="{% static 'css/styles.css' %}" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  {% comment %} <link type="text/css" href="{% static 'mainapp/css/bootstrap.min.css' %}" rel="stylesheet" /> {% endcomment %}
+  <link type="text/css" href="{% static 'mainapp/css/styles.css' %}" rel="stylesheet" />
+  <title>{{ title }}</title>  
  </head>
  <body>
-  {% block menu %}
-    <ul>
-    {% for m in menu %}
-        <li>
-            <a href={% url m.url %}>{{ m.title }}</a>
-        </li>
-    {% endfor %}
-    </ul>
-  {% endblock menu %}
+  <div class="container">
+    <header class="header">
+      Header
+    </header>
+    <div class="content">
+      content
+    </div>
+    <footer class="footer">
+      footer
+    </footer>
+
+  </div>
+
+  {% block content %}
+  
+  {% endblock content %}
+
+
+
+  {% comment %} <script src="{% static 'mainapp/js/bootstrap.bundle.min.js' %}"></script> {% endcomment %}
  </body>
 </html>

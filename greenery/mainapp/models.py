@@ -6,9 +6,10 @@ class Greenery(models.Model):
     title = models.CharField(max_length=128)
     description = models.TextField()
     photos = models.ImageField()
-    created = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 def __str__(self):
     return self.title
+
 
 
