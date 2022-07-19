@@ -1,6 +1,8 @@
+from itertools import product
 from urllib import response
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import Greenery
 
 MAIN_MENU = [
     {'title': 'Продукты', 'url': 'products'},
@@ -16,11 +18,27 @@ def main(request):
     return render(request, 'mainapp/index.html', context=context)
 
 def products(request):
+    product_list = Greenery.objects.all()
     context = {
         'title': 'Продукты',
         'menu': MAIN_MENU,
+        'product_list': product_list,
     }
     return render(request, 'mainapp/products.html', context)
 
+def product(request, pk):
+    product = Greenery.objects.get(pk=pk)
+    context = {
+        'title': product.title,
+        'menu': MAIN_MENU,
+        'product': product,
+    }
+    return render(request, 'mainapp/product.html', context)
+
+
 def recepts(request):
-    return HttpResponse('Recepts')
+    context = {
+        'title': 'Рецепты',
+        'menu': MAIN_MENU,
+    }
+    return render(request, 'mainapp/recepts.html', context)

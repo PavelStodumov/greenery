@@ -11,22 +11,20 @@
  <body>
   <div class="container">
     <header class="header">
-      Header
+      {% for m in menu %}
+        <a href="{% url m.url %}">{{ m.title }}</a>
+      {% endfor %}
     </header>
     <div class="content">
-      content
+      {% block content %}
+       
+      {% endblock content %}
     </div>
     <footer class="footer">
       footer
     </footer>
 
   </div>
-
-  {% block content %}
-  
-  {% endblock content %}
-
-
 
   {% comment %} <script src="{% static 'mainapp/js/bootstrap.bundle.min.js' %}"></script> {% endcomment %}
  </body>
