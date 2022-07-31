@@ -1,7 +1,7 @@
 from itertools import product
 from urllib import response
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .models import Greenery
 
 MAIN_MENU = [
@@ -27,7 +27,7 @@ def products(request):
     return render(request, 'mainapp/products.html', context)
 
 def product(request, pk):
-    product = Greenery.objects.get(pk=pk)
+    product = get_object_or_404(Greenery, pk=pk)
     context = {
         'title': product.title,
         'menu': MAIN_MENU,

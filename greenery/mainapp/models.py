@@ -9,6 +9,7 @@ class Greenery(models.Model):
     photos = models.ImageField(verbose_name="фото", upload_to="images/%Y/%m/%d/")
     created_at = models.DateTimeField(verbose_name="добавлено", auto_now_add=True)
 
+
     def __str__(self):
         return self.title.capitalize()
 
@@ -20,6 +21,7 @@ class Greenery(models.Model):
         verbose_name_plural = 'Продукты'
         ordering = ['title', 'created_at']
     
+
 
 
 
