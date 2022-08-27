@@ -1,0 +1,4 @@
+
+{% for m in menu_list %}
+    <a class='main_menu_button' href="{% url m.url %}">{{ m.title }}</a>
+{% endfor %}

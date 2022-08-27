@@ -1,4 +1,5 @@
 {% load static %}
+{% load main_tags %}
 <!DOCTYPE html>
 <html>
  <head>
@@ -11,9 +12,7 @@
  <body>
   <div class="container">
     <header class="header">
-      {% for m in menu %}
-        <a href="{% url m.url %}">{{ m.title }}</a>
-      {% endfor %}
+      {% main_menu %}
     </header>
     <div class="content">
       {% block content %}
